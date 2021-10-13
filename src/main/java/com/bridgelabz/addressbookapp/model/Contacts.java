@@ -1,3 +1,7 @@
+package com.bridgelabz.addressbookapp.model;
+
+import com.bridgelabz.addressbookapp.dto.ContactDTO;
+
 /**
  * Create and maintains Entity object i.e. employee payroll data object.
  *
@@ -5,11 +9,6 @@
  * @version 0.0.1
  * @since 13/10/2021
  */
-
-package com.bridgelabz.addressbookapp.model;
-
-import com.bridgelabz.addressbookapp.dto.ContactDTO;
-
 public class Contacts {
 
     public String name;

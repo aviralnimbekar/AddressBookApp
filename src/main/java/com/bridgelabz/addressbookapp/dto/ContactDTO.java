@@ -1,3 +1,5 @@
+package com.bridgelabz.addressbookapp.dto;
+
 /**
  * Receive data object from clint
  *
@@ -5,9 +7,6 @@
  * @version 0.0.1
  * @since 13/10/2021
  */
-
-package com.bridgelabz.addressbookapp.dto;
-
 public class ContactDTO {
 
     public String name;
