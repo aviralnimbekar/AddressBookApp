@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Receive various HTTP requests from clint and call respective method
  * from service layer
@@ -31,7 +33,7 @@ public class AddressBookController {
      */
     @GetMapping("/get-all")
     public ResponseEntity<ResponseDTO> getAllContacts() {
-        Contacts allContacts = addressBookService.getAllContacts();
+        List<Contacts> allContacts = addressBookService.getAllContacts();
         ResponseDTO respDto = new ResponseDTO("Get call Succeed", allContacts);
         return new ResponseEntity<>(respDto, HttpStatus.OK);
     }
@@ -44,7 +46,7 @@ public class AddressBookController {
      */
     @GetMapping("/get/{contactId}")
     public ResponseEntity<ResponseDTO> getContactById(@PathVariable int contactId) {
-        Contacts contactById = addressBookService.getContactById();
+        Contacts contactById = addressBookService.getContactById(contactId);
         ResponseDTO respDto = new ResponseDTO("Get call Succeed for id : " + contactId, contactById);
         return new ResponseEntity<>(respDto, HttpStatus.OK);
     }
