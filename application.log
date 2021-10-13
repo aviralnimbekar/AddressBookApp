@@ -1,0 +1,25 @@
+2021-10-13 18:03:52.628  INFO 6212 --- [main] c.b.a.AddressBookApplication             : Starting AddressBookApplication using Java 16.0.1 on Amits-MacBook-Pro.local with PID 6212 (/Users/amitnimbekar/Batch325/AddressBookApp/target/classes started by amitnimbekar in /Users/amitnimbekar/Batch325/AddressBookApp)
+2021-10-13 18:03:52.630  INFO 6212 --- [main] c.b.a.AddressBookApplication             : No active profile set, falling back to default profiles: default
+2021-10-13 18:03:53.039  INFO 6212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-10-13 18:03:53.049  INFO 6212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2021-10-13 18:03:53.354  INFO 6212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 18:03:53.360  INFO 6212 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 18:03:53.361  INFO 6212 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-13 18:03:53.426  INFO 6212 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 18:03:53.427  INFO 6212 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 763 ms
+2021-10-13 18:03:53.529  INFO 6212 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 18:03:53.551  INFO 6212 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-13 18:03:53.612  INFO 6212 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-13 18:03:53.660  INFO 6212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-13 18:03:53.662  WARN 6212 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-10-13 18:03:53.740  INFO 6212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-13 18:03:53.750  INFO 6212 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-10-13 18:03:53.869  INFO 6212 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 18:03:53.877  INFO 6212 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 18:03:53.912  WARN 6212 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-13 18:03:54.127  INFO 6212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-10-13 18:03:54.137  INFO 6212 --- [main] c.b.a.AddressBookApplication             : Started AddressBookApplication in 1.751 seconds (JVM running for 7.158)
+2021-10-13 18:03:54.138  INFO 6212 --- [main] c.b.a.AddressBookApplication             : Address Book Application is Running
+2021-10-13 18:04:20.834  INFO 6212 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 18:04:20.836  INFO 6212 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-13 18:04:20.841  INFO 6212 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

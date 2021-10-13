@@ -1,5 +1,6 @@
 package com.bridgelabz.addressbookapp;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,10 +12,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 13-10-2021
  */
 @SpringBootApplication
-public class AddressBookApplication {
+@Slf4j
+class AddressBookApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(AddressBookApplication.class, args);
+        log.info("Address Book Application is Running");
     }
 
 }

@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 public class AddressBookService {
 
-    private List<Contacts> contactList = new ArrayList<>();
+    private final List<Contacts> contactList = new ArrayList<>();
 
     public List<Contacts> getAllContacts() {
         return contactList;
