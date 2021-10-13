@@ -19,6 +19,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/addressbook")
 public class AddressBookController {
 
+    /**
+     * Function to receive get request from clint
+     *
+     * @return list of all contact saved in system
+     */
     @GetMapping("/get-all")
     public ResponseEntity<ResponseDTO> getAllContacts() {
         Contacts contacts = new Contacts(new ContactDTO());
@@ -26,6 +31,12 @@ public class AddressBookController {
         return new ResponseEntity<>(respDto, HttpStatus.OK);
     }
 
+    /**
+     * Function to receive get request from clint
+     *
+     * @param contactId unique Id of contact
+     * @return response entity contact from DB
+     */
     @GetMapping("/get/{contactId}")
     public ResponseEntity<ResponseDTO> getContactById(@PathVariable int contactId) {
         Contacts contact = new Contacts(new ContactDTO());
@@ -33,6 +44,12 @@ public class AddressBookController {
         return new ResponseEntity<>(respDto, HttpStatus.OK);
     }
 
+    /**
+     * Function to receive post request from clint
+     *
+     * @param contactDTO contact data object from clint
+     * @return response entity newly created contact data object
+     */
     @PostMapping("/create")
     public ResponseEntity<ResponseDTO> addContact(@RequestBody ContactDTO contactDTO) {
         Contacts contact = new Contacts(contactDTO);
@@ -40,6 +57,13 @@ public class AddressBookController {
         return new ResponseEntity<>(respDto, HttpStatus.OK);
     }
 
+    /**
+     * Function to receive put request from clint
+     *
+     * @param contactId  unique Id of contact
+     * @param contactDTO contact data object from clint
+     * @return response entity updated contact data object
+     */
     @PutMapping("/update/{contactId}")
     public ResponseEntity<ResponseDTO> updateContact(@PathVariable int contactId, @RequestBody ContactDTO contactDTO) {
         Contacts contact = new Contacts(contactDTO);
@@ -47,6 +71,12 @@ public class AddressBookController {
         return new ResponseEntity<>(respDto, HttpStatus.OK);
     }
 
+    /**
+     * Function to receive delete request from clint
+     *
+     * @param contactId unique Id of contact
+     * @return response entity with conformation message
+     */
     @DeleteMapping("/delete/{contactId}")
     public ResponseEntity<ResponseDTO> deleteContact(@PathVariable int contactId) {
         ResponseDTO respDto = new ResponseDTO("Deleted Contact Data for : " + contactId, null);
