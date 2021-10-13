@@ -8,5 +8,17 @@
 
 package com.bridgelabz.addressbookapp.model;
 
+import com.bridgelabz.addressbookapp.dto.ContactDTO;
+
 public class Contacts {
+
+    public String name;
+    public String address;
+    public long phoneNo;
+
+    public Contacts(ContactDTO contactDTO) {
+        name = contactDTO.name;
+        address = contactDTO.address;
+        phoneNo = contactDTO.phoneNo;
+    }
 }

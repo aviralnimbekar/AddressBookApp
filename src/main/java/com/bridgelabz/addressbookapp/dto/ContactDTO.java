@@ -10,5 +10,7 @@ package com.bridgelabz.addressbookapp.dto;
 
 public class ContactDTO {
 
-    public String message;
+    public String name;
+    public String address;
+    public long phoneNo;
 }
