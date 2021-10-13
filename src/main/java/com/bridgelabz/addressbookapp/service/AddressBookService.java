@@ -1,5 +1,7 @@
 package com.bridgelabz.addressbookapp.service;
 
+import com.bridgelabz.addressbookapp.dto.ContactDTO;
+import com.bridgelabz.addressbookapp.model.Contacts;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,4 +14,24 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class AddressBookService {
+
+    public Contacts getAllContacts() {
+        return null;
+    }
+
+    public Contacts getContactById() {
+        return null;
+    }
+
+    public Contacts addContact(ContactDTO contactDTO) {
+        return null;
+    }
+
+    public Contacts updateContact(int contactId, ContactDTO contactDTO) {
+        return null;
+    }
+
+    public Contacts deleteContact(int contactId) {
+        return null;
+    }
 }
