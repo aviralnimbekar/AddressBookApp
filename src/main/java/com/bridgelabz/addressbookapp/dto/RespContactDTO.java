@@ -3,7 +3,7 @@ package com.bridgelabz.addressbookapp.dto;
 import lombok.Data;
 
 @Data
-public class RespContact {
+public class RespContactDTO {
 
     private int id;
     private String fname;

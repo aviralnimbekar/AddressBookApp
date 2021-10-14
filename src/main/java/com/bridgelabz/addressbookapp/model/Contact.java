@@ -16,7 +16,7 @@ import javax.persistence.Id;
  */
 @Entity
 @Data
-public class Contacts {
+public class Contact {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

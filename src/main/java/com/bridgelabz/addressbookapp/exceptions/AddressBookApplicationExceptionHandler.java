@@ -16,9 +16,9 @@ public class AddressBookApplicationExceptionHandler {
 
     private static final String message = "Exception while processing REST Request";
 
-    @ExceptionHandler(AddressBookApplicationException.class)
+    @ExceptionHandler(AddressBookAppException.class)
     public ResponseEntity<ResponseDTO> handleAddressBookApplicationException(
-            AddressBookApplicationException exception) {
+            AddressBookAppException exception) {
         ResponseDTO responseDTO = new ResponseDTO(message, exception.getMessage());
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
     }
