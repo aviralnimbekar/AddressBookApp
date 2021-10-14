@@ -2,6 +2,8 @@ package com.bridgelabz.addressbookapp.service;
 
 import com.bridgelabz.addressbookapp.dto.ContactDTO;
 import com.bridgelabz.addressbookapp.model.Contacts;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,6 +22,9 @@ public class AddressBookService {
 
     private final List<Contacts> contactList = new ArrayList<>();
 
+    @Autowired
+    private ModelMapper modelMapper;
+
     public List<Contacts> getAllContacts() {
         return contactList;
     }
@@ -29,7 +34,8 @@ public class AddressBookService {
     }
 
     public Contacts addContact(ContactDTO contactDTO) {
-        Contacts newContact = new Contacts(contactDTO);
+        Contacts newContact = new Contacts();
+        modelMapper.map(contactDTO, newContact);
         contactList.add(newContact);
         return newContact;
     }

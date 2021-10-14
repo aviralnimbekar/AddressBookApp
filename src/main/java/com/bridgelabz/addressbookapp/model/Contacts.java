@@ -1,6 +1,11 @@
 package com.bridgelabz.addressbookapp.model;
 
-import com.bridgelabz.addressbookapp.dto.ContactDTO;
+import lombok.Data;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * Create and maintains Entity object i.e. employee payroll data object.
@@ -9,15 +14,19 @@ import com.bridgelabz.addressbookapp.dto.ContactDTO;
  * @version 0.0.1
  * @since 13/10/2021
  */
+@Data
+@Entity
 public class Contacts {
 
-    public String name;
-    public String address;
-    public long phoneNo;
-
-    public Contacts(ContactDTO contactDTO) {
-        name = contactDTO.name;
-        address = contactDTO.address;
-        phoneNo = contactDTO.phoneNo;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    private String fname;
+    private String lname;
+    private String address;
+    private String city;
+    private String state;
+    private String zipCode;
+    private String phoneNo;
+    private String email;
 }

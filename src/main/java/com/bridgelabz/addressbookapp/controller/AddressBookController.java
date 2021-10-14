@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -58,7 +59,7 @@ public class AddressBookController {
      * @return response entity newly created contact data object
      */
     @PostMapping("/create")
-    public ResponseEntity<ResponseDTO> addContact(@RequestBody ContactDTO contactDTO) {
+    public ResponseEntity<ResponseDTO> addContact(@Valid @RequestBody ContactDTO contactDTO) {
         Contacts newContact = addressBookService.addContact(contactDTO);
         ResponseDTO respDto = new ResponseDTO("Created Contact Data for : ", newContact);
         return new ResponseEntity<>(respDto, HttpStatus.OK);
