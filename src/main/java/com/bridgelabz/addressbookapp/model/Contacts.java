@@ -14,8 +14,8 @@ import javax.persistence.Id;
  * @version 0.0.1
  * @since 13/10/2021
  */
-@Data
 @Entity
+@Data
 public class Contacts {
 
     @Id

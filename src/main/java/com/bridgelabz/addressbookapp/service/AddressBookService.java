@@ -1,12 +1,13 @@
 package com.bridgelabz.addressbookapp.service;
 
 import com.bridgelabz.addressbookapp.dto.ContactDTO;
+import com.bridgelabz.addressbookapp.dto.RespContact;
 import com.bridgelabz.addressbookapp.model.Contacts;
+import com.bridgelabz.addressbookapp.repository.IAddressbookRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,31 +21,46 @@ import java.util.List;
 @Service
 public class AddressBookService {
 
-    private final List<Contacts> contactList = new ArrayList<>();
+    @Autowired
+    private IAddressbookRepository addressbookRepository;
 
     @Autowired
     private ModelMapper modelMapper;
 
-    public List<Contacts> getAllContacts() {
-        return contactList;
+    public RespContact getAllContacts() {
+        RespContact respContact = new RespContact();
+        List<Contacts> allContacts = addressbookRepository.findAll();
+        modelMapper.map(allContacts, respContact);
+        return respContact;
     }
 
-    public Contacts getContactById(int contactId) {
-        return contactList.get(contactId - 1);
+    public RespContact getContactById(int contactId) {
+        RespContact respContact = new RespContact();
+        Contacts contactById = addressbookRepository.getById(contactId);
+        modelMapper.map(contactById, respContact);
+        return respContact;
     }
 
-    public Contacts addContact(ContactDTO contactDTO) {
+    public RespContact addAndUpdateContact(ContactDTO contactDTO) {
         Contacts newContact = new Contacts();
+        RespContact respContact = new RespContact();
         modelMapper.map(contactDTO, newContact);
-        contactList.add(newContact);
-        return newContact;
+        addressbookRepository.save(newContact);
+        modelMapper.map(newContact, respContact);
+        return respContact;
     }
 
-    public Contacts updateContact(int contactId, ContactDTO contactDTO) {
-        return addContact(contactDTO);
+    public RespContact updateContact(int contactId, ContactDTO contactDTO) {
+        Contacts contactById = addressbookRepository.getById(contactId);
+        RespContact respContact = new RespContact();
+        modelMapper.map(contactDTO, contactById);
+        addressbookRepository.save(contactById);
+        modelMapper.map(contactById, respContact);
+        return respContact;
     }
 
     public Contacts deleteContact(int contactId) {
-        return contactList.remove(contactId - 1);
+        addressbookRepository.deleteById(contactId);
+        return  null;
     }
 }
