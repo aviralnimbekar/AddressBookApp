@@ -8,6 +8,7 @@ import com.bridgelabz.addressbookapp.model.Contact;
 import com.bridgelabz.addressbookapp.repository.IAddressbookRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,6 +31,10 @@ public class AddressBookService {
     @Autowired
     private ModelMapper modelMapper;
 
+//    @Autowired
+//    private ConfigurableEnvironment env;
+//    env.setActiveProfiles("someProfile");
+
     public List<RespContactDTO> getAllContacts() {
         return addressbookRepository.findAll()
                 .stream()
@@ -42,7 +47,7 @@ public class AddressBookService {
                 .orElseThrow(() -> new AddressBookAppException(ExceptionMsg.NOT_FOUND.message + contactId));
     }
 
-    public RespContactDTO addAndUpdateContact(ContactDTO contactDTO) {
+    public RespContactDTO addContact(ContactDTO contactDTO) {
         Contact newContact = modelMapper.map(contactDTO, Contact.class);
         addressbookRepository.save(newContact);
         return modelMapper.map(newContact, RespContactDTO.class);

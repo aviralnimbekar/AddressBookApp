@@ -65,7 +65,7 @@ public class AddressBookController {
      */
     @PostMapping("/create")
     public ResponseEntity<ResponseDTO> addContact(@Valid @RequestBody ContactDTO contactDTO) {
-        RespContactDTO newContact = addressBookService.addAndUpdateContact(contactDTO);
+        RespContactDTO newContact = addressBookService.addContact(contactDTO);
         ResponseDTO respDto = new ResponseDTO(RequestMsg.POST_CALL.message, newContact);
         return new ResponseEntity<>(respDto, HttpStatus.OK);
     }

@@ -1,6 +1,8 @@
 package com.bridgelabz.addressbookapp.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -13,6 +15,8 @@ import javax.validation.constraints.Pattern;
  * @since 13/10/2021
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ContactDTO {
 
     @NotBlank(message = "First Name cannot be empty")
